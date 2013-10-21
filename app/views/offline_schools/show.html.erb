@@ -1,0 +1,13 @@
+<div id="map">
+	<script> 
+	var map = L.map('map').setView([<%= @lat %>, <%= @lng %>], 13);
+	var marker1 = L.marker([<%= @lat%>, <%= @lng %>]).addTo(map);
+	marker1.openPopup('click').bindPopup("<b><%= @offline_schools.name %></b><br><%= @offline_schools.city %>, <%= @offline_schools.state %> <%= @offline_schools.zip_code %><br><a href='<%= @offline_schools.site_url %>'>Website</a> <br> <%= @offline_schools.bio %>");
+	L.tileLayer('http://{s}.tile.cloudmade.com/f644205df10c4e16a94c5c9b74438873/998/256/{z}/{x}/{y}.png', {
+    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
+      maxZoom: 18,
+      minZoom: 1,
+      maxBounds: [[-85, -180], [85, 180]]
+  }).addTo(map);
+	</script>
+</div>

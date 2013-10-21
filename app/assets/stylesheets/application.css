@@ -1,0 +1,22 @@
+/*
+ *= require twitter/bootstrap
+ *= require_self
+ *= require_tree .
+ */
+@import url(http://fonts.googleapis.com/css?family=Voltaire);
+
+#map { 
+ 	height: 500px;
+ 	width: 500px;
+ 	margin: auto;
+ 	margin-top: 15px;
+}
+
+.container {
+	text-align: center;
+}
+
+.navbar-brand {
+	font-family: Voltaire;
+	font-size: 24px;
+}
