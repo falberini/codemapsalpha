@@ -6,10 +6,10 @@ class OfflineSchoolsController < ApplicationController
 
 	def new
 		@offline_schools = OfflineSchool.all
-		@school_array = []
-		@offline_schools.each do |school|
-			@school_array << [school.latitude, school.longitude, school.id]
-		end
+		# @school_array = []
+		# @offline_schools.each do |school|
+		# 	@school_array << [school.latitude, school.longitude, school.id]
+		# end
 		query = params[:search_term]
 		#replaces spaces with + in the school address
 		query = query.gsub!(/ /, '+')
