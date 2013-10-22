@@ -1,18 +1,27 @@
 class OfflineSchoolsController < ApplicationController
 
 	def index
-				
+				@offline_schools = OfflineSchool.all
+
+				respond_to do |format|
+					format.html
+					format.json { render json: @offline_schools}
+				end
 	end
+
+	# def data
+	# 	@offline_schools = OfflineSchool.all
+	# 	@offline_schools.to_json
+	# end
 
 	def new
 		@offline_schools = OfflineSchool.all
-		# @school_array = []
-		# @offline_schools.each do |school|
-		# 	@school_array << [school.latitude, school.longitude, school.id]
-		# end
-		query = params[:search_term]
-		#replaces spaces with + in the school address
-		query = query.gsub!(/ /, '+')
+		@school_array = []
+		@offline_schools.each do |school|
+			@school_array << [school.latitude, school.longitude, school.id]
+		end
+		# URI::escape removes 
+		query = URI::escape(params[:search_term])
 		#queries the googlemaps API passing through school address in the query string
 		result = Typhoeus.get("http://maps.googleapis.com/maps/api/geocode/json?address=#{query}&sensor=true")
 		#parse the json out of the result from googlemaps API query
