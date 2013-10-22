@@ -1,8 +1,27 @@
 <div id="map">
 	<script> 
-	var map = L.map('map').setView([<%= @lat %>, <%= @lng %>], 13);
-	var marker1 = L.marker([<%= @lat%>, <%= @lng %>]).addTo(map);
-	marker1.openPopup('click').bindPopup("<b><%= @offline_schools.name %></b><br><%= @offline_schools.city %>, <%= @offline_schools.state %> <%= @offline_schools.zip_code %><br><a href='<%= @offline_schools.site_url %>'>Website</a> <br> <%= @offline_schools.bio %>");
+	schools = <%= @school_array.to_json %>
+	var a = schools[0]
+	var b = schools[1]
+	var school_group = new L.LayerGroup();
+	L.marker([a[0],a[1]]).openPopup('click').bindPopup("Some text").addTo(school_group);
+	L.marker([b[0],b[1]]).openPopup('click').bindPopup("some other text").addTo(school_group);
+
+	// for (var i = 0; i < schools.length; i++) {
+	// 		var a = schools[i];
+	// 		var school_group = new L.LayerGroup();
+	// 		L.marker([a[0],a[1]]).bindPopup(a[2]).addTo(school_group);
+	// 	}
+	var map = L.map('map', {
+		center:[<%= @lat %>, <%= @lng %>],
+		zoom: 10,
+		layers: [school_group]
+	});
+	// var overlays = {
+	// 	"school_group": school_group
+	// }
+	// L.control.layers(overlays).addTo(map);
+
 	L.tileLayer('http://{s}.tile.cloudmade.com/f644205df10c4e16a94c5c9b74438873/998/256/{z}/{x}/{y}.png', {
     attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
       maxZoom: 18,
