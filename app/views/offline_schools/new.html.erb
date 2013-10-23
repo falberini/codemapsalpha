@@ -1,23 +1,27 @@
 <div id="map">
 	<script> 
 
-	var schools = <%= @school_array.to_json %>
+	var schools = <%= @school_array.to_json %>;
 	var school_group = new L.LayerGroup();
-
+	var lat = <%= @lat %>;
+	var lng = <%= @lng %>;
+	var url = "/OfflineSchools.json?lat=" + encodeURIComponent(lat) + "&lng=" + encodeURIComponent(lng);	
+	
 	var map = L.map('map', {
-		center:[<%= @lat %>, <%= @lng %>],
+		center:[lat,lng],
 		zoom: 10,
 		layers: [school_group]
 	});
-
+	
 	$.ajax({
 	    type: "GET",
-	    url: "/OfflineSchools.json",
+	    url: url,
 	    dataType: 'json',
 	    success: function (response) { 
 	      for (var i = 0; i < response.length; i++) {
-					console.log(response[i].bio);
-					L.marker([response[i].latitude,response[i].longitude]).openPopup('click').bindPopup(response[i].name).addTo(school_group);
+					L.marker([response[i].latitude,response[i].longitude]).openPopup('click').bindPopup(
+						"<strong>" + response[i]["name"] + "</strong>" + "<br>" + response[i]["street"] + "<br>" + response[i]["bio"]
+					).addTo(school_group);
 				}
 	    }
 	});
@@ -34,11 +38,5 @@
       maxBounds: [[-85, -180], [85, 180]]
   }).addTo(map);
 	
-	// Code to manually add school markers
-	// var a = schools[0];
-	// var b = schools[1];
-	// var school_group = new L.LayerGroup();
-	// L.marker([a[0],a[1]]).openPopup('click').bindPopup("Some text").addTo(school_group);
-	// L.marker([b[0],b[1]]).openPopup('click').bindPopup("some other text").addTo(school_group);
 	</script>
 </div>

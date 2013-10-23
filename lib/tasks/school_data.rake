@@ -4,9 +4,10 @@ require 'open-uri'
 desc "Fetch school data"
 task :fetch_school_data => :environment do 
 
-	url = "http://aws.code.org/search?query=berkeley%2C+ca"
+	url = "http://aws.code.org/search?query=new+york%2C+ny"
 	doc = Nokogiri::HTML(open(url))
 	doc.css(".result").each do |item|
+		#Scrape data from code.org
 		name = item.css(".name").text
 		description = item.css(".tt").text
 		street = item.css(".address").text
@@ -15,23 +16,19 @@ task :fetch_school_data => :environment do
 		school_level = item.css(".description div div:nth-child(1)").text
 		class_format = item.css(".description div div:nth-child(2)").text
 		languages = item.css(".description div div:nth-child(3)").text
-		puts '&&&&&&&&&&&&&&&&&&&'
-		puts '******NAME******'
-		#name.gsub!(/^\n    /,'')
-		p name.strip
-		puts '***DESCRIPTION**'
-		p description.strip
-		puts '***STREET*******'
-		p street.strip
-		puts '***CITY/STATE***'
-		p city_state.strip
-		puts '***SCHL-LEVEL***'
-		p school_level.strip
-		puts '**CLASS-FORMAT**'
-		p class_format.strip
-		puts '****LANGUAGES***'
-		p class_format.strip
-		puts '&&&&&&&&&&&&&&&&&&&'
+		#Strip empty space and random html formatting crap from each entry
+		name1 = name.strip
+		description1 = description.strip
+		street1 = street.strip
+		city_state1 = city_state.strip
+		site_url1 = site_url.strip
+		school_level1 = school_level.strip
+		class_format1 = class_format.strip
+		languages1 = languages.strip
+		if name1.empty?
+			puts "Unable to add school to DB"
+		else
+			OfflineSchool.create(name: name1, street: street1, city: city_state1, site_url: site_url1, bio: description1, ed_level: school_level1, format: class_format1)
+		end
 	end
-
 end
