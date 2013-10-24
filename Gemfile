@@ -11,7 +11,6 @@ gem 'geocoder'
 gem 'json'
 gem 'typhoeus'
 gem 'nokogiri'
-gem 'geocoder'
 gem "nifty-generators", :group => :development
 
 # Gems used only for assets and not required

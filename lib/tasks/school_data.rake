@@ -4,7 +4,7 @@ require 'open-uri'
 desc "Fetch school data"
 task :fetch_school_data => :environment do 
 
-	url = "http://aws.code.org/search?query=new+york%2C+ny"
+	url = "http://aws.code.org/search?query=denver%2C+co"
 	doc = Nokogiri::HTML(open(url))
 	doc.css(".result").each do |item|
 		#Scrape data from code.org

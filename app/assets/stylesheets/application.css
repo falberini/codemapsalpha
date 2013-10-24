@@ -3,20 +3,110 @@
  *= require_self
  *= require_tree .
  */
-@import url(http://fonts.googleapis.com/css?family=Voltaire);
+
+@import url(http://fonts.googleapis.com/css?family=Allerta);
+@import url(http://fonts.googleapis.com/css?family=Lato);
+
+html, body { height: 100%;}
+
+.full-height { height: 100%;}
 
 #map { 
- 	height: 500px;
- 	width: 500px;
- 	margin: auto;
- 	margin-top: 15px;
+ 	height: 725px;
+ 	width: 100%;
+ 	margin: 0;
+}
+
+ul{
+	list-style: none;
+}
+
+li{
+	color: #fff;
 }
 
 .container {
 	text-align: center;
+	margin: 0;
+	padding: 0;
 }
 
-.navbar-brand {
-	font-family: Voltaire;
-	font-size: 24px;
+.form-control {
+	width: 200px;
+	margin: auto;
+}
+
+.col-md-3 {
+	background: #34495e;
+  font-family: lato, Helvetica, sans-serif;
+	height: 100%;
+	padding-right: 0px;
+	padding-left: 0px;
+  /*width: 320px;
+  font-weight: 300;
+  letter-spacing: 2px;
+  line-height: 35px;
+  padding-top: 0px;*/
+}
+
+.col-md-9 {
+  font-family: lato, Helvetica, sans-serif;
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+body {
+  margin: 0px;
+  font-family: lato, Helvetica, sans-serif;
+  font-size: 19px;
+  letter-spacing: 1px;
+  font-weight: 200;
+  text-align: center; 
+}
+
+.logo-container{
+	border: 1px solid white;
+  font-size: 45px;
+  margin: auto;
+  color: #fff;
+  font-family: lato, Helvetica, sans-serif;
+  line-height: 10px;
+  margin-top: 15px;
+ 	padding-bottom: 5px;
+ 	padding-top: 5px;
+  width: 65%; 
+}
+
+hr {
+	border: solid #ddd;
+	border-width: 1px 0 0;
+	clear: both;
+	/*margin: 1.25em 0 1.1875em;*/
+	height: 0;
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+.input-group {
+	padding-top: 1em;
+	width: 250px;
+	margin: auto;
+}
+
+h1 {
+	margin-top: 0px;
+	font-weight: 300;
+	font-family: Lato, Helvetica, sans-serif;	
+}
+
+.links{
+	margin-top: 30px;
+	text-align: center;
+	letter-spacing: .01em;
+	
+}
+.link{
+	padding-left: 20px;
+	padding-right: 20px;
+	letter-spacing: .01em;	
 }

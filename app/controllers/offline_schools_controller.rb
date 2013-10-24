@@ -1,21 +1,16 @@
 class OfflineSchoolsController < ApplicationController
 
 	def index
-				@offline_schools = OfflineSchool.all
-				respond_to do |format|
-					format.html
-					format.json {  
-						@lat = params[:lat]
-						@lng = params[:lng]
-						render json: OfflineSchool.near([@lat, @lng], 50, :order => :distance)
-					}
-				end
+		@offline_schools = OfflineSchool.all
+		respond_to do |format|
+			format.html
+			format.json {  
+				@lat = params[:lat]
+				@lng = params[:lng]
+				render json: OfflineSchool.near([@lat, @lng], 50, :order => :distance)
+			}
+		end
 	end
-
-	# def data
-	# 	@offline_schools = OfflineSchool.all
-	# 	@offline_schools.to_json
-	# end
 
 	def new
 		# URI::escape removes spaces from search query

@@ -1,0 +1,9 @@
+	<div>
+		<h1><%= quote.name %> </h1>
+	</div>
+	<div>
+		<p><%= quote.description %></p>
+	</div>
+	<%= link_to "See this shit", quote(quote) %><br>
+	<%= link_to "Update this shit", edit_path(quote) %><br>
+	<%= link_to "Destroy this shit", quote_path(quote), method: :delete %>

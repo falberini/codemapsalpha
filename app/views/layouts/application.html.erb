@@ -5,29 +5,39 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
-  <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.2/leaflet.css" />
+  <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.2/leaflet.css"/>
   <script src="http://cdn.leafletjs.com/leaflet-0.6.2/leaflet.js"></script>
+  <link rel="stylesheet" href="../assets/font-awesome.min.css">
 </head>
 <body>
-	<div class="navbar navbar-default navbar-static-top">
-	  <div class="container">
-	   	<div class="navbar-header">
-	      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-	          <span class="icon-bar"></span>
-	          <span class="icon-bar"></span>
-	          <span class="icon-bar"></span>
-	        </button>
-	        <a class="navbar-brand" href="#">codemaps</a>
-	    </div>
-	    <div class="navbar-collapse collapse">
-	      <ul class="nav navbar-nav">
-	        <li><a href="#resources">Resources</a></li>
-	        <li><a href="#about">About</a></li>
-	    </div>
-	  </div>
+<div class="row full-height">    
+	<div class="col-md-3 full-height">
+		<div class='logo-container' href='/'>
+			<i class="fa fa-map-marker"></i>
+			<h1>learncode</h1>
+		</div>
+		<div class="links">
+			<ul class="link">
+				<li>Step 1: Get Inspired</li>
+				<hr>
+				<li>Step 2: Begin Your Self Study</li>
+				<hr>
+				<li>Step 3: Get Real Training</li>
+			</ul>
+		<form action="/OfflineSchools/new" method="get">
+			<div class="input-group">
+				<input class="form-control" type="text" name="search_term" placeholder="Where do you live?">
+				<span class="input-group-btn">
+					<button class="btn btn-primary" type="button">Submit</button>
+				</span>
+			</div>
+		</form>
+		<hr>
 	</div>
-<div class="container">    
-<%= yield %>
-</div>	
+</div>
+	<div class="col-md-9">
+		<%= yield %>
+	</div>
+</div>
 </body>
 </html>
