@@ -1,4 +1,38 @@
-<%= link_to "Add a quote", new_quote_path %>'
+<div class="container">
 <% @quotes.each do |quote| %>
-	<%= render "quote", quote: quote %>
+		<div class="row">
+			<div class="col-md-6">
+			  <div class="panel panel-default left-col">
+			    <div class="panel-heading">
+			      <img src='<%= quote.picture %>' class="image pull-right">
+			      <div class="author-bio">
+			      	Name: <%= quote.author %><br>	
+			      	Title: <%= quote.position %><br>	
+			        Company: <%= quote.employer %><br>
+			        Years Programming: <%= quote.years_programming %><br>	
+			      </div>
+			    </div>
+			    <div class="panel-body">
+				  	<%= quote.advice %> 
+				  </div>
+				</div>
+			</div>
+			<div class="col-md-6">
+			  <div class="panel panel-default right-col">
+			    <div class="panel-heading">
+			      <img src='<%= quote.picture %>' class="image pull-right">
+			      <div class="author-bio">
+			      	Name: <%= quote.author %><br>	
+			      	Title: <%= quote.position %><br>	
+			        Company: <%= quote.employer %><br>
+			        Years Programming: <%= quote.years_programming %><br>	
+			      </div>
+			    </div>
+			    <div class="panel-body">
+				  	<%= quote.advice %> 
+				  </div>
+				</div>
+			</div>
+		</div>	
 <% end %>
+</div>

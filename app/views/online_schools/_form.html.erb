@@ -1,0 +1,18 @@
+<%= form_for @onlineschool do |f| %>	
+<div class="form-group">	
+	<%= f.text_field :name, class: "form-control", placeholder: "Online school/tutorial name" %><br>
+</div>
+<div class="form-group">	
+	<%= f.text_field :site_url, class: "form-control", placeholder: "Site URL" %><br>
+</div>
+<div class="form-group">	
+	<%= f.text_field :pricing, class: "form-control", placeholder: "Pricing" %><br>
+</div>
+<div class="form-group">	
+	<%= f.text_field :bio, class: "form-control", placeholder: "Brief Description" %><br>
+</div>
+<div class="form-group">	
+	<%= f.text_field :languages, class: "form-control", placeholder: "Languages taught" %><br>
+</div>
+<button class="btn btn-default"><%= f.submit %></button>
+<% end %>
