@@ -32,7 +32,7 @@ li{
 }
 
 .form-control {
-	width: 200px;
+	/*width: 200px;*/
 	margin: auto;
 }
 
@@ -42,6 +42,7 @@ li{
 	height: 100%;
 	padding-right: 0px;
 	padding-left: 0px;
+	margin: auto;
   /*width: 320px;
   font-weight: 300;
   letter-spacing: 2px;
@@ -50,7 +51,7 @@ li{
 }
 
 .col-md-9 {
-  font-family: lato, Helvetica, sans-serif;
+  font-family: Helvetica, sans-serif;
 	padding-left: 0px;
 	padding-right: 0px;
 }
@@ -109,4 +110,26 @@ h1 {
 	padding-left: 20px;
 	padding-right: 20px;
 	letter-spacing: .01em;	
+}
+
+.right {
+	text-align: right;
+}
+
+.author-bio {
+	text-align: left;
+	letter-spacing: .0001em;	
+}
+.panel{
+	margin-left: 15px;
+	line-height: 18px;
+	font-size: 16px;
+}
+.panel-body {
+	font-size: 14px;
+	line-height: 18px;	
+}
+
+.image {
+	max-height: 70px;
 }
