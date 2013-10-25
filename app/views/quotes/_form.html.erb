@@ -1,24 +1,17 @@
 <%= form_for @quote do |f| %>	
-<div class="form-group">	
-	<%= f.text_field :author, class: "form-control", placeholder: "Enter your name" %><br>
-</div>
-<div class="form-group">	
-	<%= f.text_field :employer, class: "form-control", placeholder: "Enter your employer" %><br>
-</div>
-<div class="form-group">	
-	<%= f.text_field :position, class: "form-control", placeholder: "Enter your job title" %><br>
-</div>
-<div class="form-group">	
-	<%= f.text_field :education, class: "form-control", placeholder: "Enter your education (University, vocational, self-taught, etc.)" %><br>
-</div>
-<div class="form-group">	
-	<%= f.text_field :years_programming, class: "form-control", placeholder: "Enter years programming" %><br>
-</div>
-<div class="form-group">	
-	<%= f.text_field :picture, class: "form-control", placeholder: "Enter picture URL" %><br>
-</div>
-<div class="form-group">	
-	<%= f.text_field :advice, class: "form-control", size: "50x10", placeholder: "Share your words of wisdom" %><br>
-</div>
-	<button class="btn btn-default"><%= f.submit %></button>
+	Name: <br>
+	<%= f.text_field :author, class: "form-group", placeholder: "Enter name" %><br>
+	Employer: <br>
+	<%= f.text_field :employer, class: "form-group", placeholder: "Enter employer" %><br>
+	Position: <br>
+	<%= f.text_field :position, class: "form-group", placeholder: "Enter position" %><br>
+	Education: <br>
+	<%= f.text_field :education, class: "form-group", placeholder: "Enter Education" %><br>
+	Years Programming: <br>
+	<%= f.text_field :years_programming, class: "form-group", placeholder: "Enter years programming" %><br>
+	Picture: <br>
+	<%= f.text_field :picture, class: "form-group", placeholder: "Enter picture URL" %><br>
+	Words of Wisdom: <br>
+	<%= f.text_field :advice, class: "form-group", size: "50x10" %><br>
+	<%= f.submit %>
 <% end %>

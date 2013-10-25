@@ -5,12 +5,12 @@ class OnlineSchoolsController < ApplicationController
 	end
 
 	def new
-		@onlineschool = OnlineSchool.new
+		@online_school = OnlineSchool.new
 	end
 
 	def create
-		new_onlineschool = OnlineSchool.create(params[:onlineschool])
-		redirect_to new_onlineschool
+		new_onlineschool = OnlineSchool.create(params[:online_school])
+		redirect_to "/online_schools"
 	end
 
 	def show

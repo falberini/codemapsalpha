@@ -1,4 +1,5 @@
 /*
+ *= require twitter/bootstrap
  *= require_self
  *= require_tree .
  */
@@ -24,6 +25,11 @@ li{
 	color: #fff;
 }
 
+.quotes-description{
+	width: 700px;
+	font-size: 18px;
+	margin: auto;
+}
 .container {
 	text-align: center;
 	margin: 0;
@@ -47,6 +53,11 @@ li{
   letter-spacing: 2px;
   line-height: 35px;
   padding-top: 0px;*/
+}
+
+.col-md-11 {
+  font-family: Helvetica, sans-serif;
+  margin: auto;
 }
 
 .col-md-9 {

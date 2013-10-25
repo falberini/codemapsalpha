@@ -10,7 +10,7 @@ class QuotesController < ApplicationController
 
 	def create
 		new_quote = Quote.create(params[:quote])
-		redirect_to new_quote
+		redirect_to index
 	end
 
 	def show
