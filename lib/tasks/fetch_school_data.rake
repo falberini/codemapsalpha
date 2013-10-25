@@ -3,7 +3,7 @@ require 'open-uri'
 
 desc "Fetch school data"
 task :fetch_school_data => :environment do 
-	cities = ["new+york,+ny"]
+	cities = ["los+angeles,+ca","burbank,+ca","san+rafael,+ca","burlingame,+ca"]
 	cities.each do |city|	
 		url = "http://aws.code.org/search?query="+city
 		doc = Nokogiri::HTML(open(url))
