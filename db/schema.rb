@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131025020036) do
+ActiveRecord::Schema.define(:version => 20131025022341) do
 
   create_table "languages", :force => true do |t|
     t.string   "language"
@@ -36,10 +36,10 @@ ActiveRecord::Schema.define(:version => 20131025020036) do
     t.string   "site_url"
     t.string   "ed_level"
     t.string   "pricing"
-    t.string   "bio"
+    t.text     "bio"
     t.string   "format"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
     t.string   "street"
     t.float    "longitude"
     t.float    "latitude"
