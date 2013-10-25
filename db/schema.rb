@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(:version => 20131025022341) do
     t.string   "site_url"
     t.string   "ed_level"
     t.string   "pricing"
-    t.text     "bio"
+    t.text     "bio",        :limit => 255
     t.string   "format"
     t.datetime "created_at",                :null => false
     t.datetime "updated_at",                :null => false
