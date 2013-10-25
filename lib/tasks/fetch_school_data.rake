@@ -3,7 +3,7 @@ require 'open-uri'
 
 desc "Fetch school data"
 task :fetch_school_data => :environment do 
-	cities = ["Chicago+Ill.","Houston+Tex.","Philadelphia+Pa.","Phoenix+Ariz.","San+Antonio+Tex.","San+Diego+Calif.","Dallas+Tex.","San+Jose+Calif.","Austin+Tex.","Jacksonville+Fla.","Indianapolis+Ind.","San+Francisco+Calif","Columbus+Ohio","Fort+Worth+Tex","Charlotte+N.C.","Detroit+Mich.","El+Paso+Tex","Memphis+Tenn.","Boston+Mass.","Seattle+Wash.","Denver+Colo.","Washington+DC","Nashville-Davidson+Tenn","Baltimore+Md.","Louisville-Jefferson+County+ky","Portland+Ore.","Oklahoma+City+Okla","Milwaukee+Wis.","Las+Vegas+Nev","Albuquerque+N.M.","Tucson+Ariz.","Fresno+Calif.","Sacramento+Calif.","Long+Beach+Calif","Kansas+City+Mo","Mesa+Ariz.","Virginia+Beach+Va","Atlanta+Ga","Colorado+Springs+Colo","Raleigh+N.C.","Omaha+Nebr.","Miami+Fla.","Oakland+Calif.","Tulsa+Okla.","Minneapolis+Minn.","Cleveland+Ohio","Wichita+Kans.","Arlington+Tex."]
+	cities = ["san+jose,+ca"]
 	cities.each do |city|	
 		url = "http://aws.code.org/search?query="+city
 		doc = Nokogiri::HTML(open(url))
