@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131025022341) do
+ActiveRecord::Schema.define(:version => 20131025030557) do
 
   create_table "languages", :force => true do |t|
     t.string   "language"
@@ -33,13 +33,13 @@ ActiveRecord::Schema.define(:version => 20131025022341) do
     t.string   "city"
     t.string   "state"
     t.integer  "zip_code"
-    t.string   "site_url"
-    t.string   "ed_level"
+    t.text     "site_url"
+    t.text     "ed_level"
     t.string   "pricing"
-    t.text     "bio",        :limit => 255
-    t.string   "format"
-    t.datetime "created_at",                :null => false
-    t.datetime "updated_at",                :null => false
+    t.text     "bio"
+    t.text     "format"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
     t.string   "street"
     t.float    "longitude"
     t.float    "latitude"
