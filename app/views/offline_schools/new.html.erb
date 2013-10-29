@@ -8,7 +8,7 @@
 	}
 	else {
 	var lng = <%= @lng || 0 %>;
-	var url = "/OfflineSchools.json?lat=" + encodeURIComponent(lat) + "&lng=" + encodeURIComponent(lng);
+	var url = "/offline_schools.json?lat=" + encodeURIComponent(lat) + "&lng=" + encodeURIComponent(lng);
 
 	createMap();
 	function createMap(){

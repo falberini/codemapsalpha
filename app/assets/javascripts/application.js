@@ -16,7 +16,7 @@
 
 $(function(){
 	var school_group = new L.LayerGroup();
-	var url = "/OfflineSchools.json?lat=37.7749295&lng=-122.4194155";
+	var url = "/offline_schools.json?lat=37.7749295&lng=-122.4194155";
 	
 	var createMap = function(){
 		var map = L.map('map', {

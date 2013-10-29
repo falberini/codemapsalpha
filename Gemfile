@@ -33,7 +33,7 @@ group :development, :test do
   gem 'pry'
   gem 'pry-rails'
   gem 'sqlite3'
-  gem 'capybara'
+  gem 'konacha'
 end
 
 gem 'jquery-rails'
@@ -52,5 +52,3 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'debugger'
-
-gem "mocha", :group => :test

@@ -1,7 +1,7 @@
 Codemaptest::Application.routes.draw do  
-	root to: "OfflineSchools#index"
+	root to: "offline_schools#index"
   
-  resources :OfflineSchools
+  resources :offline_schools
 	resources :online_schools
   resources :quotes
 end

@@ -3,7 +3,7 @@ class OfflineSchoolsController < ApplicationController
 	
 	def index
 		@offline_schools = OfflineSchool.all
-		respond_to do |format|
+		respond_to do |format| #restful technique to 
 			format.html
 			format.json {  
 				@lat = params[:lat]
