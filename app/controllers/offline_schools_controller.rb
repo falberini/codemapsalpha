@@ -17,7 +17,5 @@ class OfflineSchoolsController < ApplicationController
 		getLatlng(params[:search_term]);
 	end
 
-	def create
-	end
 end
 
