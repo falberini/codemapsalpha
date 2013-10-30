@@ -31,10 +31,10 @@ $(function(){
       minZoom: 1,
       maxBounds: [[-85, -180], [85, 180]]
   	}).addTo(map);
-  	getBlah(url, school_group)
+  	getMarkers(url, school_group)
 	}
 
-	var getBlah = function(url, school_group){
+	var getMarkers = function(url, school_group){
 	$.ajax({
 	    type: "GET",
 	    url: url,
