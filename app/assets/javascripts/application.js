@@ -14,11 +14,7 @@
 //= require jquery_ujs
 //= require_tree .
 
-$(function(){
-	var school_group = new L.LayerGroup();
-	var url = "/offline_schools.json?lat=37.7749295&lng=-122.4194155";
-	
-	var createMap = function(){
+var createMap = function(map){
 		var map = L.map('map', {
 			center:[37.7749295,-122.4194155],
 			zoom: 11,
@@ -34,6 +30,10 @@ $(function(){
   	getMarkers(url, school_group)
 	}
 
+$(function(){
+	var school_group = new L.LayerGroup();
+	var url = "/offline_schools.json?lat=37.7749295&lng=-122.4194155";
+	
 	var getMarkers = function(url, school_group){
 	$.ajax({
 	    type: "GET",
