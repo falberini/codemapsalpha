@@ -11,22 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131029010355) do
-
-  create_table "languages", :force => true do |t|
-    t.string   "language"
-    t.string   "description"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-  end
-
-  create_table "locations", :force => true do |t|
-    t.string   "address"
-    t.float    "latitude"
-    t.float    "longitude"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
+ActiveRecord::Schema.define(:version => 20140108002450) do
 
   create_table "offline_schools", :force => true do |t|
     t.string   "name"
@@ -35,21 +20,24 @@ ActiveRecord::Schema.define(:version => 20131029010355) do
     t.integer  "zip_code"
     t.text     "site_url"
     t.text     "ed_level"
-    t.string   "pricing"
     t.text     "bio"
     t.text     "format"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
     t.string   "street"
     t.float    "longitude"
     t.float    "latitude"
+    t.text     "contact_email"
+    t.text     "contact_number"
+    t.text     "languages"
+    t.text     "country"
   end
 
   create_table "online_schools", :force => true do |t|
     t.string   "name"
-    t.string   "site_url"
+    t.text     "site_url"
     t.string   "pricing"
-    t.string   "bio"
+    t.text     "bio"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.string   "languages"
